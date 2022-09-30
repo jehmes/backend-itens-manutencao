@@ -10,6 +10,7 @@ import com.br.api.manutencao.dto.ProductDto;
 import com.br.api.manutencao.mapper.ProductMapper;
 import com.br.api.manutencao.models.ProductModel;
 import com.br.api.manutencao.repositories.IProductRepository;
+import com.br.api.manutencao.repositories.ProductRepositoryCustom;
 
 @Service
 public class ProductService {
@@ -17,8 +18,15 @@ public class ProductService {
 	@Autowired
 	IProductRepository iProductRepository;
 	
+	@Autowired
+	ProductRepositoryCustom productRepositoryCustom;
+	
 	public List<ProductModel> getAllProducts() {
 		return (List<ProductModel>) iProductRepository.findAll();
+	}
+	
+	public List<ProductModel> getFilteredProducts(String name, Long quantity, Float moneyValue, Long defective) {
+		return productRepositoryCustom.findByFilter(name, quantity, moneyValue, defective);
 	}
 	
 	public Optional<ProductModel> findById(int id) {

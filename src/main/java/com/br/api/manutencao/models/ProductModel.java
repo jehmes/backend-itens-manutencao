@@ -40,6 +40,19 @@ public class ProductModel {
 	private String binaryImage;
 
 	
+	
+	public ProductModel(int id, String name, int quantity, int defective, float moneyValue, String imageName,
+			String binaryImage) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.quantity = quantity;
+		this.defective = defective;
+		this.moneyValue = moneyValue;
+		this.imageName = imageName;
+		this.binaryImage = binaryImage;
+	}
+
 	public ProductModel() {
 	}
 
