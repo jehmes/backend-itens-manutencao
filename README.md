@@ -2,4 +2,4 @@
 
 ## Rodar a aplicação
 
-Só precisa iniciar a aplicação para funcionar.
+No diretório do projeto digitar o comando -> mvn spring-boot:run
